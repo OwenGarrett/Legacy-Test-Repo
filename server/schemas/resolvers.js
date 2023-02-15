@@ -10,16 +10,19 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('thoughts');
     },
+    gallery: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Art.find(params).sort({ createdAt: -1 });
+    },
+    singleart: async (parent, { aId }) => {
+      return Art.findOne({ _id: aId });
+    },
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Thought.find(params).sort({ createdAt: -1 });
     },
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
-    },
-    gallery: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Art.find(params).sort({ createdAt: -1 });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -103,6 +106,23 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    addArtComment: async (parent, { aId, commentText }, context) => {
+      if (context.user) {
+        return Art.findOneAndUpdate(
+          { _id: aId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     removeThought: async (parent, { thoughtId }, context) => {
       if (context.user) {
         const thought = await Thought.findOneAndDelete({
@@ -127,6 +147,39 @@ const resolvers = {
             $pull: {
               comments: {
                 _id: commentId,
+                commentAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+removeArt: async (parent, { aId }, context) => {
+      if (context.user) {
+        const art = await Art.findOneAndDelete({
+          _id: aId,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { gallery: art._id } }
+        );
+
+        return art;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeArtComment: async (parent, { aId, commentId }, context) => {
+      if (context.user) {
+        return Art.findOneAndUpdate(
+          { _id: aId },
+          {
+            $pull: {
+              comments: {
+                _id: aId,
                 commentAuthor: context.user.username,
               },
             },
