@@ -57,7 +57,7 @@ export const ADD_ART = gql`
 `;
 
 
-export const ADD_COMMENT = gql`
+export const ADD_THCOMMENT = gql`
   mutation addComment($thoughtId: ID!, $commentText: String!) {
     addComment(thoughtId: $thoughtId, commentText: $commentText) {
       _id
@@ -72,3 +72,22 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addArtComment($aId: ID!, $commentText: String!) {
+    addArtComment(aId: $aId, commentText: $commentText) {
+      _id
+      artId
+      artTitle
+      artImage
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
