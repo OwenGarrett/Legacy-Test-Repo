@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Container from './Container';
 import Row from './Row';
@@ -20,16 +21,26 @@ const [addArt, { error }] = useMutation(ADD_ART);
   // When the search form is submitted, use the API.search method to search for the movie(s)
   const searchMovie = (query) => 
     API.artsearch(query)
-      .then((res) => { console.log(res.data)
-        API.artobject(res.data.objectIDs[0])
-         .then((res) => setResult(res.data))
-         .catch((err) => console.log(err));
+      .then((res) => { 
+        if (!res.data.objectIDs) {return setResult({title: ""});}
+        //var i = 0;
+        for (let i=0; i<2; i++) {
+        API.artobject(res.data.objectIDs[i])
+         .then((x) => { 
+         console.log(i);
+         if (x.data.primaryImageSmall != "" && i<2) {
+         
+         return setResult(x.data);i = 2;}
+         })
+         .catch((err) => console.log(err))
+      }
+       return setResult({title: ""});
       })
       .catch((err) => console.log(err));
 
   // useEffect hook runs on startup only. starts with a preset movie
   useEffect(() => {
-    searchMovie('Scream');
+    searchMovie('mona lisa');
   },[]);
 
   // handleInputChange lets you type in the search textbox
@@ -58,7 +69,7 @@ console.log(aid)
           thoughtAuthor: Auth.getProfile().data.username,
         },
       });
-       window.location.assign('/gallery');
+       window.location.assign('/me');
     } catch (err) {
       console.error(err);
       } 
@@ -80,9 +91,10 @@ console.log(aid)
 
   return (
     <Container>
+      {Auth.loggedIn() ? (
       <Row>
         <Col size="md-8">
-          <Card heading={title || 'Search for a Movie to Begin'}>
+          <Card heading={title || 'Search Again'}>
             {title ? (
               <ArtDetail
                 title={title}
@@ -106,7 +118,12 @@ console.log(aid)
             />
           </Card>
         </Col>
-      </Row>
+      </Row>) : (
+        <p>
+          Sign up to start making a gallery! Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </Container>
   );
 };
