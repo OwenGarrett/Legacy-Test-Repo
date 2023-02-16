@@ -923,7 +923,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #19615f !important;
+  background-color: #3e5607 !important;
 }
 
 .bg-info {
@@ -935,11 +935,12 @@ a:hover {
 }
 
 .bg-light {
-  background-color: #d9e9e8 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #1a1a1a;
 }
 
 .bg-dark {
-  background-color: #19615f!important;
+  background-color:  #3e5607  !important;
 }
 
 .bg-white {
@@ -1015,16 +1016,16 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color:  #19615f;
+  background-color:  #3e5607 ;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #84b8b4;
+  background-color: #4d0411;
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
+  background-color: #4d0411;
   color: #ffffff;
 }
 
@@ -1038,7 +1039,7 @@ a:hover {
 }
 
 .btn.btn-info:hover {
-  background-color: #84b8b4;
+  background-color: #4d0411;
 }
 
 .btn.btn-light {
@@ -1047,7 +1048,7 @@ a:hover {
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #4d0411;
 }
 
 .btn.btn-dark {
@@ -1093,7 +1094,7 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color:  #19615f;
+  background-color:  #3e5607;
   color: #d9e9e8;
 }
 
