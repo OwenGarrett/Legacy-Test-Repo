@@ -23,13 +23,13 @@ You may use Patron on Heroku.
 
 ## URL 
 
-<a href ="https://coolors.co/palettes/trending" target="_blank">
+<a href ="https://coolors.co/palettes/trending" target="_blank">Spot holder link</a>
 
 ## Development 
 
 Patron is a MERN project that was designed using JavaScript; JSON; Node Modules; MongoDB Compass; and Postman. This is our second working repository for this project. Please see link below for our first GitHub repository. 
 
-<a href ="https://github.com/Eddiebuck88/Legacy-Stadiums" target="_blank">
+<a href ="https://github.com/Eddiebuck88/Legacy-Stadiums" target="_blank">First GitHub Repo</a>
 
 ## Screenshot
 
