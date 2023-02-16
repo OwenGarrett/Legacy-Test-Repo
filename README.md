@@ -23,7 +23,7 @@ You may use Patron on Heroku.
 
 ## URL 
 
-https://elderscrolls.bethesda.net/en/oblivion
+https://coolors.co/palettes/trending
 
 ## Development 
 
