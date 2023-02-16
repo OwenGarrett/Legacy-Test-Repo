@@ -6,6 +6,8 @@ const ArtList = ({
   title,
   showTitle = true,
   showUsername = true,
+  handleDeleteArt = this.handleDeleteArt,
+  closebutton,
 }) => {
   if (!art.length) {
     return <h3>No Gallery Yet</h3>;
@@ -23,15 +25,21 @@ const ArtList = ({
                   className="text-light"
                   to={`/profiles/${x.thoughtAuthor}`}
                 >
-                  {x.thoughtAuthor} <br />
+                  {x.artTitle} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    {x.artTitle}
+                    Added by {x.thoughtAuthor}
                   </span>
                 </Link>
               ) : (
                 <>
+            <Link className="text-light"
+ to={`/art/${x._id}`}
+            >
+                  {x.artTitle}</Link>
+                  {closebutton ? (<span onClick={() => handleDeleteArt(x._id)} style={{ fontSize: '3rem', float: 'right', cursor:'pointer'}}>&times;</span>) : <></> }
+                  <br />
                   <span style={{ fontSize: '1rem' }}>
-                    You added this art on {x.createdAt}
+                    {x.createdAt}
                   </span>
                 </>
               )}

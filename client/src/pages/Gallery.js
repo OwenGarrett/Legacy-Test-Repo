@@ -26,6 +26,8 @@ const Gallery = () => {
             <ArtList
               art={art}
               title="Gallery"
+              handleDeleteArt={()=>0}
+              closebutton={false}
             />
           )}
         </div>

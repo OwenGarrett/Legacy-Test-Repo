@@ -41,7 +41,7 @@ const CommentForm = ({ aId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this art?</h4>
+      <h4>Leave a comment below</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -77,7 +77,7 @@ const CommentForm = ({ aId }) => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in order to leave a comment. Thank you.{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
