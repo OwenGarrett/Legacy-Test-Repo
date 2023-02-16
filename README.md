@@ -1,23 +1,23 @@
-## Patron
+# Patron
 
-# Description
+## Description
 
-# Table of Contents 
+## Table of Contents 
 
-# Installation
+## Installation
 
-# How to use application
+## How to use application
 
-# URL 
+## URL 
 
-# Screenshot
+## Screenshot
 
-# Credits
+## Credits
 
-Amber Greenburg
-Edmond Buck 
-Mariano Rojano 
-Phil
+Amber Greenburg,
+Edmond Buck, 
+Mariano Rojano, 
+Phil, and
 Owen Garrett
 
 :alien::yin_yang:
