@@ -16,7 +16,7 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Brought to you by{' '}
+          Developed by{' '}
           <span
             className="emoji"
             role="img"
@@ -25,7 +25,7 @@ const Footer = () => {
           >
             
           </span>{' '}
-          Team Deez
+          Team D
         </h4>
       </div>
     </footer>

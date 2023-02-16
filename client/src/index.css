@@ -890,7 +890,7 @@ a:hover {
 }
 
 .text-info {
-  color: #f0b104 !important;
+  color: #1bbc9b !important;
 }
 
 .text-danger {
@@ -918,16 +918,16 @@ a:hover {
 }
 
 .text-link {
-  color: #3f37c9 !important;
+  color: #1b89bc !important;
 }
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #3f37c9 !important;
+  background-color: #19615f !important;
 }
 
 .bg-info {
-  background-color: #3f37c9 !important;
+  background-color: #1bbc9b !important;
 }
 
 .bg-danger {
@@ -935,11 +935,11 @@ a:hover {
 }
 
 .bg-light {
-  background-color: #e9d9d9 !important;
+  background-color: #d9e9e8 !important;
 }
 
 .bg-dark {
-  background-color: #3f37c9!important;
+  background-color: #19615f!important;
 }
 
 .bg-white {
@@ -951,7 +951,7 @@ a:hover {
 }
 
 .bg-link {
-  background-color: #3f37c9 !important;
+  background-color: #1b89bc !important;
 }
 
 /* DISPLAY */
@@ -1087,13 +1087,13 @@ a:hover {
 }
 
 .card {
-  border: 1px solid #ec0cce;
+  border: 1px solid #1a1a1a;
   margin-bottom: 1rem;
 }
 
 .card .card-header {
   padding: 0.375rem;
-  background-color:  #ec0cce;
+  background-color:  #19615f;
   color: #d9e9e8;
 }
 
@@ -1171,7 +1171,6 @@ label form [type='radio'] {
 }
 
 .container {
-  background-color: #1bbc9b;
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
