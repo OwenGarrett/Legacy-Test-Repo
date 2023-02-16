@@ -55,6 +55,25 @@ export const QUERY_SINGLE_THOUGHT = gql`
   }
 `;
 
+export const QUERY_SINGLE_ART = gql`
+  query getSingleArt($aId: ID!) {
+    singleart(aId: $aId) {
+      _id
+      artId
+      artTitle
+      artImage
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+    }
+  }
+`;
+
 export const QUERY_ME = gql`
   query me {
     me {

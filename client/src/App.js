@@ -17,6 +17,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ArtContainer from './components/ArtContainer';
 import Gallery from './pages/Gallery';
+import SingleArt from './pages/SingleArt';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -76,6 +77,9 @@ function App() {
               />
               <Route path="/thoughts/:thoughtId" 
                 element={<SingleThought />}
+              />
+              <Route path="/art/:aId" 
+                element={<SingleArt />}
               />
               <Route 
                 path="/search" 

@@ -44,6 +44,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     gallery(username: String): [Art]
+    singleart(aId: ID!): Art
     thoughts(username: String): [Thought]
     thought(thoughtId: ID!): Thought
     me: User
@@ -55,8 +56,11 @@ const typeDefs = gql`
     addThought(thoughtText: String!): Thought
     addArt(artId: Int!, artTitle: String!, artImage: String): Art
     addComment(thoughtId: ID!, commentText: String!): Thought
+    addArtComment(aId: ID!, commentText: String!): Art
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
+    removeArt(aId: ID!): Art
+    removeArtComment(aId: ID!, commentId: ID!): Art
   }
 `;
 
