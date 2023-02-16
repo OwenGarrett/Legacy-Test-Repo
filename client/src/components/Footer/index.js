@@ -25,7 +25,7 @@ const Footer = () => {
           >
             
           </span>{' '}
-          Team D
+          Team Dee
         </h4>
       </div>
     </footer>
