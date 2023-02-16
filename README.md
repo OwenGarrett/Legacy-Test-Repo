@@ -23,7 +23,7 @@ You may use Patron on Heroku.
 
 ## URL 
 
-<a href ="https://coolors.co/palettes/trending" target="_blank">Spot holder link</a>
+<a href ="https://still-hamlet-17829.herokuapp.com/" target="_blank">Deployed Heroku Application URL</a>
 
 ## Development 
 
