@@ -91,3 +91,38 @@ export const ADD_COMMENT = gql`
   }
 `;
 
+export const DEL_ART = gql`
+  mutation removeArt($aId: ID!) {
+    removeArt(aId: $aId) {
+      _id
+      artId
+      artTitle
+      artImage
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const DEL_COMMENT = gql`
+  mutation removeArtComment($aId: ID!, $commentId: ID!) {
+    removeArtComment(aId: $aId, commentId: $commentId) {
+     _id
+      artId
+      artTitle
+      artImage
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
