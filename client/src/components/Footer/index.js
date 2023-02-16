@@ -25,7 +25,7 @@ const Footer = () => {
           >
             
           </span>{' '}
-          Team Dee
+          A POEM 
         </h4>
       </div>
     </footer>
