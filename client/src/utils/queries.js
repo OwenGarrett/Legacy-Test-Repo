@@ -11,6 +11,14 @@ export const QUERY_USER = gql`
         thoughtText
         createdAt
       }
+      gallery {
+        _id
+        artId
+        artTitle
+        artImage
+        thoughtAuthor
+        createdAt
+      }
     }
   }
 `;
@@ -23,6 +31,7 @@ export const QUERY_GALLERY = gql`
       artTitle
       artImage
       thoughtAuthor
+      createdAt
     }
   }
 `;
@@ -83,6 +92,14 @@ export const QUERY_ME = gql`
       thoughts {
         _id
         thoughtText
+        thoughtAuthor
+        createdAt
+      }
+      gallery {
+        _id
+        artId
+        artTitle
+        artImage
         thoughtAuthor
         createdAt
       }
