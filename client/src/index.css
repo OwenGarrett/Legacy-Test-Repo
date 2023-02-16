@@ -876,6 +876,7 @@ a:hover {
 
 .text-center {
   text-align: center !important;
+  overflow: auto;
 }
 
 .text-justify {
